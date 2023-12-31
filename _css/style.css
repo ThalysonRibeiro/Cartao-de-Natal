@@ -1,0 +1,265 @@
+/* Importa as fontes Ephesis e Poppins do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Estilos base para o corpo do documento, centralizando todo o conteúdo */
+body {
+    height: 100vh;
+    /* 100% da altura da viewport */
+    display: flex;
+    /* Usa Flexbox para alinhamento */
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: center;
+    /* Centraliza verticalmente */
+}
+
+/* Estilos para os flocos de neve */
+.snow {
+    position: absolute;
+    /* Posicionamento absoluto em relação ao seu contêiner mais próximo com posição relativa ou absoluta */
+    transform: translateY(0);
+    /* Inicia sem deslocamento vertical */
+    color: white;
+    /* Cor branca para o texto (floco de neve) */
+    font-size: 35px;
+    /* Tamanho do texto (floco de neve) */
+    animation: fall 1s linear;
+    /* Aplica a animação 'fall' com duração de 1 segundo em estilo linear */
+    top: -10vh;
+    /* Posiciona os flocos de neve acima da tela para começarem fora da vista */
+}
+
+/* Estilos para o cartão de natal */
+.card {
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassa os limites do cartão */
+    position: relative;
+    /* Posição relativa para posicionar os filhos absolutamente dentro do cartão */
+    width: 450px;
+    /* Largura do cartão */
+    height: 500px;
+    /* Altura do cartão */
+    background-color: #39405d;
+    /* Cor de fundo azul claro para o cartão */
+    box-shadow: 15px 1px 50px rgba(0, 0, 0, .2);
+    /* Sombra ao redor do cartão */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+}
+
+/* Pseudo-elemento para estilização adicional */
+.card:before {
+    content: "";
+    /* Pseudo-elementos precisam da propriedade 'content' */
+    position: absolute;
+    /* Posicionamento absoluto dentro do cartão */
+    width: 550px;
+    /* Largura maior que o cartão para efeito de fundo */
+    height: 250px;
+    /* Altura para o efeito de fundo */
+    background-color: white;
+    /* Cor de fundo branca */
+    border-radius: 50%;
+    /* Transforma em forma circular/oval */
+    top: 300px;
+    /* Posicionamento a partir do topo do cartão */
+    left: -25px;
+    /* Posicionamento a partir da esquerda do cartão */
+    box-shadow: -130px -10px #f8f9fa, 80px -20px #e9ecef;
+    /* Sombras múltiplas para efeito visual */
+}
+
+/* Estilos para os ícones dentro do cartão */
+.icons {
+    position: absolute;
+    /* Posicionamento absoluto dentro do cartão */
+    height: 150px;
+    /* Altura para o contêiner dos ícones */
+    overflow: visible;
+    /* Permite que os ícones sejam visíveis mesmo fora do contêiner */
+    top: 280px;
+    /* Posicionamento vertical */
+    left: 70px;
+    /* Posicionamento horizontal */
+}
+
+/* Estilos para os desejos de natal dentro do cartão */
+.wishes {
+    position: absolute;
+    /* Posicionamento absoluto dentro do cartão */
+    color: #ffd700;
+    /* Cor verde para o texto */
+    top: 150px;
+    /* Posicionamento vertical */
+    width: 450px;
+    /* Largura para alinhamento do texto */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    font-size: 65px;
+    /* Tamanho do texto */
+    font-family: 'Ephesis', cursive;
+    /* Tipo de fonte para o texto */
+}
+
+/* Estilos para subtexto dentro do cartão */
+.subtext {
+    position: absolute;
+    /* Posicionamento absoluto dentro do cartão */
+    color: white;
+    /* Cor branca para o texto */
+    top: 240px;
+    /* Posicionamento vertical */
+    width: 440px;
+    /* Largura para alinhamento do texto */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    font-size: 10px;
+    /* Tamanho do texto */
+    font-family: 'Poppins';
+    /* Tipo de fonte para o texto */
+
+}
+
+/* Animação para o movimento de queda dos flocos de neve */
+@keyframes fall {
+    0% {
+        top: -50px;
+        /* Inicia acima do topo do cartão */
+    }
+
+    100% {
+        top: 900px;
+        /* Termina abaixo do fundo do cartão */
+    }
+}
+
+/* Estilos para o cartão de natal 3D */
+.Cartão-de-ano-novo {
+    position: relative;
+    /* Posicionamento relativo para a estrutura 3D */
+    width: 450px;
+    /* Largura do cartão */
+    height: 500px;
+    /* Altura do cartão */
+    transform-style: preserve-3d;
+    /* Preserva o estilo 3D para os filhos */
+    transform: perspective(2500px);
+    /* Perspectiva para o efeito 3D */
+    transition: 3s;
+    /* Transição suave para transformações */
+}
+
+/* Esconde o checkbox usado para abrir o cartão */
+input#open {
+    display: none;
+    /* Esconde o input */
+}
+
+/* Estilos para a frente do cartão */
+.card-front {
+    position: relative;
+    /* Posicionamento relativo para os filhos */
+    background-color: #fff;
+    /* Cor de fundo branca para a frente do cartão */
+    width: 450px;
+    /* Largura do cartão */
+    height: 500px;
+    /* Altura do cartão */
+    overflow: hidden;
+    /* Esconde o conteúdo que ultrapassa os limites */
+    transform-origin: left;
+    /* Origem da transformação para o lado esquerdo */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    /* Sombra interna e externa para efeito visual */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    transition: .3s;
+    /* Transição suave para transformações */
+}
+
+/* Estilos para o interior do cartão */
+.card-inside {
+    position: absolute;
+    /* Posicionamento absoluto em relação ao `.christmas-card` */
+    background-color: #fff;
+    /* Cor de fundo branca para o interior do cartão */
+    width: 450px;
+    /* Largura do cartão */
+    height: 500px;
+    /* Altura do cartão */
+    z-index: -1;
+    /* Posiciona abaixo da frente do cartão */
+    left: 0;
+    /* Alinhado à esquerda do contêiner */
+    top: 0;
+    /* Alinhado ao topo do contêiner */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13);
+    /* Sombra interna para efeito visual */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+    background-color: #39405d;
+    /* Cor de fundo azul claro para o interior do cartão */
+
+}
+
+/* Estilos para o texto 'Clique para abrir' */
+.click-to-open {
+    position: absolute;
+    /* Posicionamento absoluto dentro do cartão */
+    color: white;
+    /* Cor branca para o texto */
+    top: 200px;
+    /* Posicionamento vertical */
+    width: 450px;
+    /* Largura para alinhamento do texto */
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    font-size: 35px;
+    /* Tamanho do texto */
+    font-family: 'Ephesis', cursive;
+    /* Tipo de fonte para o texto */
+}
+
+/* Estilos para a área clicável que abre o cartão */
+.open {
+    position: absolute;
+    /* Posicionamento absoluto em relação ao `.christmas-card` */
+    width: 450px;
+    /* Largura do cartão */
+    height: 500px;
+    /* Altura do cartão */
+    left: 0;
+    /* Alinhado à esquerda do contêiner */
+    top: 0;
+    /* Alinhado ao topo do contêiner */
+    background-color: transparent;
+    /* Cor de fundo transparente */
+    z-index: 6;
+    /* Garante que está acima de outros elementos para ser clicável */
+    cursor: pointer;
+    /* Muda o cursor para indicar que é clicável */
+}
+
+/* Estilos para a frente do cartão quando o checkbox está marcado (cartão aberto) */
+#open:checked~.card-front {
+    transform: rotateY(-155deg);
+    /* Gira a frente do cartão para 'abrir' */
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, .13), 30px 0 50px rgba(0, 0, 0, 0.1);
+    /* Sombra para efeito visual */
+    border-radius: 10px;
+    /* Bordas arredondadas */
+}
+
+/* Ajusta o z-index do pseudo-elemento da frente do cartão quando aberto */
+#open:checked~.card-front:before {
+    z-index: 5;
+    /* Posiciona acima de outros elementos internos quando o cartão está aberto */
+}
+
+#open:checked~.img-fogus {
+    position: relative;
+    z-index: 5;
+    top: 0;
+    left: 0;
+}
